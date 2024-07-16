@@ -1,7 +1,15 @@
 console.log('my script is linked')
 //cache at least one element using selectElementById
-const taskList = document.getElementById('tasks');
-console.log(taskList);
+const appName = document.getElementById("app-name");
+const noteInput = document.getElementById("note-input");
+const noteButton = document.getElementById("add-note-button");
+const notesList = document.getElementById("notes-list");
+    
+// const nameField = document.getElementById("name-field");
+    
+// const output = document.getElementById("output"); 
+
+
 
 // Iterate over a collection of elements to accomplish some task.
 //      the easiest sets of elements to iterate over in a meaningful way are
@@ -11,43 +19,7 @@ console.log(taskList);
 // I will need form validation 
 // a user inputting a new task would be a form
 
-//Purpose: This line of code sets up an event listener for the DOMContentLoaded event.
-//The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
-//document.addEventListener: This method attaches an event listener to the document object.
-//DOMContentLoaded": This specifies the event type to listen for.
-//function () { ... }: This is the callback function that runs when the event is triggered. The code inside this function will execute once the DOM is fully loaded.
-//In simpler words, this event listener setup is telling the browser, "when the DOM is ready,run this function"
-document.addEventListener("DOMContentLoaded", function () {
-   
-    // --------Requirement: Cache at least one element using getElementById (5%)---------
-    
-    //document.getElementById is a method that finds an HTML element by its ID.
-    //How It Works: It searches the HTML document for the element with the specified ID and returns that element so you can use it in your script.
 
-    
-   //Purpose: Finds the element with the ID "main-title" and stores it in the variable mainTitle.
-   //Why: So you can easily change or use this element later in the code.
-    const mainTitle = document.getElementById("main-title");
-    
-    //Purpose: Finds the element with the ID "item-list" and stores it in the variable itemList.
-    //Why: So you can add or remove items from this list.
-    const itemList = document.getElementById("item-list");
-    
-    //Purpose: Finds the element with the ID "add-item-button" and stores it in the variable addItemButton.
-    //Why: So you can make something happen when this button is clicked.
-    const addItemButton = document.getElementById("add-item-button");
-    
-    //Purpose: Finds the element with the ID "example-form" and stores it in the variable exampleForm.
-    //Why: So you can handle form submissions.
-    const exampleForm = document.getElementById("example-form");
-    
-    //Purpose: Finds the element with the ID "name-field" and stores it in the variable nameField.
-    //Why: So you can get or set the value of this input field.
-    const nameField = document.getElementById("name-field");
-    
-    //Purpose: Finds the element with the ID "output" and stores it in the variable output.
-    //Why: So you can display results or messages in this area.
-    const output = document.getElementById("output");
 
     // --------Requirement: Cache at least one element using querySelector (5%)-----------
     
