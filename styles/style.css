@@ -1,9 +1,9 @@
 body {
-    background-color: green;
+    background-color: rgb(100, 179, 100);
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 20px;
 }
-p {
+p, h1 {
     text-align: center;
 }
 #app {
@@ -13,32 +13,27 @@ p {
     border: 1px solid #ffffff;
     border-radius: 40px;
 }
- 
-#app-name {
-    text-align: center;
-}
 
-#item-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.item {
-    background-color: #f0f0f0;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
+input {
+    font-size: 15px;
+    padding: 5px 5px;
+    border-radius: 15px;
 }
 
 button {
-    display: block;
     margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-#output {
+button:hover {
+    background-color: blueviolet;
+}
+
+/* #output {
     margin-top: 20px;
     padding: 10px;
     border: 1px solid gray;
     border-radius: 5px;
-}
+} */
  
