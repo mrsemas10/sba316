@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const noteButton = document.getElementById("add-note-button");
     // const exampleForm = document.getElementById("example-form");
     const myForm = document.getElementById("form");
+    const noteInput = document.getElementById("note-input");
     // const nameField = document.getElementById("name-field");
     const yourName = document.getElementById("name");
     const yourEmail = document.getElementById("email");
@@ -22,12 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
     //     newItem.textContent = `Item ${itemList.children.length + 1}`;
     //     itemList.appendChild(newItem);
     // });
-    noteButton.addEventListener("click", function () {
-        const newNote = document.createElement("li");
-        newNote.classList.add("notes");
-        newNote.textContent = `notes ${notesList.children.length + 1}`;
-        notesListList.appendChild(newNote);
-    });
+    noteButton.addEventListener("click", addNote);
+        function addNote() {
+        
+        const newNote = noteInput.value;
+        const newLi = document.createElement("li");
+        // newNote.classList.add("notes-list");
+        newLi.textContent = newNote;
+        notesList.appendChild(newLi);
+    };
 
     
     // document.querySelectorAll(".item").forEach(function (item) {
@@ -41,25 +45,26 @@ document.addEventListener("DOMContentLoaded", function () {
     //         alert(`You clicked on ${item.textContent}`);
     //     });
     // });
-    myForm.addEventListener("send", function (evt) {
+    myForm.addEventListener("send", hitSend);
+    function hitSend(evt) {
         evt.preventDefault();
-        if (yourName.value === "" || yourEmail === "") {
-            alert("Input field is required!");
-        } else {
-            output.textContent = `You entered: ${nameField.value}`;
-            output.style.color = "green";
-            nameField.value = "";
-        }
+        alert('An email has been sent.');
+    }   
+    //     if (yourName.value === "" || yourEmail === "") {
+    //         alert("Input field is required!");
+    //     } else {
+    //         alert('An email has been sent.');
+    //     }
+    // });
+
+    // directions.setAttribute("title", "follow these directions");
+
+    appName.addEventListener("mouseover", function () {
+        appName.style.color = "red";
     });
-    description.setAttribute("title", "This is a description");
 
+    appName.addEventListener("mouseout", function () {
 
-    mainTitle.addEventListener("mouseover", function () {
-        mainTitle.style.color = "blue";
-    });
-
-    mainTitle.addEventListener("mouseout", function () {
-
-        mainTitle.style.color = "black";
+        appName.style.color = "blue";
     });
 });
