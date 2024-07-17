@@ -12,13 +12,17 @@
 <body>
     <div id="app">
         <h1 id="app-name">Keep My Notes App</h1>
-        <p id="directions">Need to remember something quick? Type it below.</p>
-
+        <p id="directions">Need to remember something quick? Type it below and send it to your email!</p>
+        <form id="form">
+            <input type="text" id="name" placeholder="type your name" required>
+            <input type="email" id="email" placeholder="type your email" required>
+            <button type="submit">Send</button>
+        </form>
         <input type="text" id="note-input" />
         <button id="add-note-button">Add Note</button>
         <h3>My Notes</h3>
         <ul id="notes-list">
-            <li></li>
+            <li class="notes"></li>
         </ul>
     </div>
 </body>
