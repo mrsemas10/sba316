@@ -40,15 +40,16 @@ document.addEventListener("DOMContentLoaded", function () {
     //     });
     // });
 
-    // document.querySelectorAll(".notes").forEach(function (item) {
-    //     item.addEventListener("click", function () {
-    //         alert(`You clicked on ${item.textContent}`);
-    //     });
-    // });
-    myForm.addEventListener("send", hitSend);
+    document.querySelectorAll("submit").forEach(function (button) {
+        button.addEventListener("click", function () {
+            alert('An email has been sent.');
+        });
+    });
+
+    myForm.addEventListener("submit", hitSend);
     function hitSend(evt) {
         evt.preventDefault();
-        alert('An email has been sent.');
+        alert(`An email was sent to: ${myForm.querySelector("#email").value}`);
     }   
     //     if (yourName.value === "" || yourEmail === "") {
     //         alert("Input field is required!");
