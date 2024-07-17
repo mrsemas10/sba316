@@ -2,30 +2,21 @@ console.log('my script is linked')
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // const mainTitle = document.getElementById("main-title");
     const appName = document.getElementById("app-name");
-    // const itemList = document.getElementById("item-list");
     const notesList = document.getElementById("notes-list");
-    // const addItemButton = document.getElementById("add-item-button");
     const noteButton = document.getElementById("add-note-button");
-    // const exampleForm = document.getElementById("example-form");
     const myForm = document.getElementById("form");
+    const myNotes = document.getElementById("my-notes");
     const noteInput = document.getElementById("note-input");
-    // const nameField = document.getElementById("name-field");
     const yourName = document.getElementById("name");
     const yourEmail = document.getElementById("email");
-    // const description = document.querySelector("#description");
-    const directions = document.querySelector("directions");
 
-    // addItemButton.addEventListener("click", function () {
-    //     const newItem = document.createElement("li");
-    //     newItem.classList.add("item");
-    //     newItem.textContent = `Item ${itemList.children.length + 1}`;
-    //     itemList.appendChild(newItem);
-    // });
+    const directions = document.querySelector("directions");
+   
+
     noteButton.addEventListener("click", addNote);
-        function addNote() {
-        
+    function addNote() {
+
         const newNote = noteInput.value;
         const newLi = document.createElement("li");
         // newNote.classList.add("notes-list");
@@ -33,12 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
         notesList.appendChild(newLi);
     };
 
-    
-    // document.querySelectorAll(".item").forEach(function (item) {
-    //     item.addEventListener("click", function () {
-    //         alert(`You clicked on ${item.textContent}`);
-    //     });
-    // });
 
     document.querySelectorAll("submit").forEach(function (button) {
         button.addEventListener("click", function () {
@@ -46,26 +31,40 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    myForm.addEventListener("submit", validate);
+
+    function validate(evt) {
+        const enterName = validateName();
+        if (enterName === false || enterEmail === false) {
+            evt.returnValue = false;
+            return false;
+        }
+    }
+
+    function validateName() {
+        let enterName = yourName.value;
+        if (enterName.length < 2) {
+            alert("Your name must be a least 2 characters");
+            return false;
+        }
+
+        return enterName;
+    }
+
+
     myForm.addEventListener("submit", hitSend);
     function hitSend(evt) {
         evt.preventDefault();
         alert(`An email was sent to: ${myForm.querySelector("#email").value}`);
-    }   
-    //     if (yourName.value === "" || yourEmail === "") {
-    //         alert("Input field is required!");
-    //     } else {
-    //         alert('An email has been sent.');
-    //     }
-    // });
-
+    }
+    
     // directions.setAttribute("title", "follow these directions");
 
     appName.addEventListener("mouseover", function () {
         appName.style.color = "red";
     });
 
-    appName.addEventListener("mouseout", function () {
-
-        appName.style.color = "blue";
+    myNotes.addEventListener("mouseout", function () {
+        myNotes.style.color = "blue";
     });
 });
